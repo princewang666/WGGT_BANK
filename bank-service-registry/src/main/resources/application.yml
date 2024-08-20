@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: bank-service-registry
+
+# 端口号
+server:
+  port: 8088
+
+eureka:
+  client:
+    service-url:
+      # 指定默认区域，否则eureka使用http://localhost:8761 
+      defaultZone: http://localhost:${server.port}/eureka
+    # 阻止eureka将自身注册
+    register-with-eureka: false
+    # 阻止eureka从自身项目获取服务信息
+    fetch-registry: false 
