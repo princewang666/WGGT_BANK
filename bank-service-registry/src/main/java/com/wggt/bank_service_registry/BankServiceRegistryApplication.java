@@ -4,7 +4,7 @@
  * @LastEditors: princewang666 1213246620@qq.com
  * @LastEditTime: 2024-08-20 17:58:45
  * @FilePath: \WGGT_BANK\bank-service-registry\src\main\java\com\wggt\bank_service_registry\BankServiceRegistryApplication.java
- * @Description: 启动类1
+ * @Description: 启动类
  * 
  * Copyright (c) 2024 by wggt, All Rights Reserved. 
  */
