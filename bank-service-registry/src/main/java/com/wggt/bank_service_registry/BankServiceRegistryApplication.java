@@ -2,9 +2,9 @@
  * @Author: princewang666 1213246620@qq.com
  * @Date: 2024-08-20 16:59:44
  * @LastEditors: princewang666 1213246620@qq.com
- * @LastEditTime: 2024-08-20 17:38:09
+ * @LastEditTime: 2024-08-20 17:58:45
  * @FilePath: \WGGT_BANK\bank-service-registry\src\main\java\com\wggt\bank_service_registry\BankServiceRegistryApplication.java
- * @Description: 启动类
+ * @Description: 启动类1
  * 
  * Copyright (c) 2024 by wggt, All Rights Reserved. 
  */
