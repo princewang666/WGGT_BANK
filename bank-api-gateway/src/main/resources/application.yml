@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: bank-api-gateway
+
+# 端口号
+server:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      # 因为修改了服务器默认区域，所以要在配置中指明 
+      defaultZone: http://localhost:8088/eureka
