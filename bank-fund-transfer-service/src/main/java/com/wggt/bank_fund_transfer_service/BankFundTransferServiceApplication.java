@@ -1,13 +1,13 @@
-package com.wggt.bank_api_gateway;
+package com.wggt.bank_fund_transfer_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BankApiGatewayApplication {
+public class BankFundTransferServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BankApiGatewayApplication.class, args);
+		SpringApplication.run(BankFundTransferServiceApplication.class, args);
 	}
 
 }
