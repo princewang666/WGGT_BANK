@@ -4,26 +4,28 @@ spring:
   # 网关路由配置
   cloud:
     gateway:
-      routes:
-        # 用户服务
-          # id仅作为路由标识符，可以用任何字母数字构成
-        - id: bank-user-service
-          # uri可以使用http://localhost:8091 和 lb://bank-user-service
-          # 用lb://bank-user-service可以使用Eureka Server自带的负载均衡器(load balancer)
-          uri: lb://bank-user-service
-          # predicates设置多个路由路径，例如http://localhost:8090/user 会被路由到 http://localhost:8091  
-          predicates:
-            - Path=/user/**
-          # filters设置过滤路径，StripPrefix=1指去除1个前缀，例如http://localhost:8090/user/api 会被路由到 http://localhost:8091/api  
-          filters:
-            - StripPrefix=1
-        # 转账服务
-        - id: bank-fund-transfer-service
-          uri: lb://bank-fund-transfer-service
-          predicates:
-            - Path=/fund-transfer/**
-          filters:
-            - StripPrefix=1
+      # 不加mvc默认使用的reactive
+      mvc:
+        routes:
+          # 用户服务
+            # id仅作为路由标识符，可以用任何字母数字构成
+          - id: bank-user-service
+            # uri可以使用http://localhost:8091 和 lb://bank-user-service
+            # 用lb://bank-user-service可以使用Eureka Server自带的负载均衡器(load balancer)
+            uri: lb://bank-user-service
+            # predicates设置多个路由路径，例如http://localhost:8090/user 会被路由到 http://localhost:8091  
+            predicates:
+              - Path=/user/**
+            # filters设置过滤路径，StripPrefix=1指去除1个前缀，例如http://localhost:8090/user/api 会被路由到 http://localhost:8091/api  
+            filters:
+              - StripPrefix=1
+          # 转账服务
+          - id: bank-fund-transfer-service
+            uri: lb://bank-fund-transfer-service
+            predicates:
+              - Path=/fund-transfer/**
+            filters:
+              - StripPrefix=1
 
 # 端口号
 server:
