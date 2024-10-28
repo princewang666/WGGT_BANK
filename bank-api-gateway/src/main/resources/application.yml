@@ -26,6 +26,13 @@ spring:
               - Path=/fund-transfer/**
             filters:
               - StripPrefix=1
+  # 安全认证配置
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # 使用宿主机暴露的ip和端口号即可
+          issuer-uri: http://192.168.114.129:8080/realms/wggt_bank_keycloak/ 
 
 # 端口号
 server:
