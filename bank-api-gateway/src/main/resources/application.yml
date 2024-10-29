@@ -28,10 +28,12 @@ spring:
               - StripPrefix=1
   # 安全认证配置
   security:
+    # 使用OIDC协议，认证服务器会暴露网址用于认证授权用户
     oauth2:
       resourceserver:
         jwt:
-          # 使用宿主机暴露的ip和端口号即可
+          # 查看所暴露的网址格式http://{ip}:{port}/realms/{realm-name}/.well-known/openid-configuration，使用宿主机暴露的ip和端口号，realm-name使用自己创建的
+          # http://192.168.114.129:8080/realms/wggt_bank_keycloak/.well-known/openid-configuration
           issuer-uri: http://192.168.114.129:8080/realms/wggt_bank_keycloak/ 
 
 # 端口号
