@@ -2,7 +2,7 @@
  * @Author: princewang666 1213246620@qq.com
  * @Date: 2024-11-06 16:40:07
  * @LastEditors: princewang666 1213246620@qq.com
- * @LastEditTime: 2024-11-06 17:19:21
+ * @LastEditTime: 2024-11-08 16:18:25
  * @FilePath: \WGGT_BANK\core-bank-service\src\main\java\com\wggt\core_bank_service\model\entity\BankAccountEntity.java
  * @Description: 银行账户实体类
  * 
@@ -11,6 +11,9 @@
 package com.wggt.core_bank_service.model.entity;
 
 import java.math.BigDecimal;
+
+import com.wggt.core_bank_service.model.utils.AccountStatus;
+import com.wggt.core_bank_service.model.utils.AccountType;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

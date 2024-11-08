@@ -8,7 +8,7 @@
  * 
  * Copyright (c) 2024 by wggt, All Rights Reserved. 
  */
-package com.wggt.core_bank_service.model.entity;
+package com.wggt.core_bank_service.model.utils;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

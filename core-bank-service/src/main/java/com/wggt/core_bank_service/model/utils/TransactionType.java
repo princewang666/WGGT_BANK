@@ -1,4 +1,4 @@
-package com.wggt.core_bank_service.model.entity;
+package com.wggt.core_bank_service.model.utils;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

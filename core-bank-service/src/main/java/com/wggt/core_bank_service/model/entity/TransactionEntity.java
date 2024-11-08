@@ -12,6 +12,8 @@ package com.wggt.core_bank_service.model.entity;
 
 import java.math.BigDecimal;
 
+import com.wggt.core_bank_service.model.utils.TransactionType;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
