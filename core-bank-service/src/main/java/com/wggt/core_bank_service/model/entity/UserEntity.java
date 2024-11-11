@@ -4,7 +4,7 @@
  * @LastEditors: princewang666 1213246620@qq.com
  * @LastEditTime: 2024-11-06 17:13:40
  * @FilePath: \WGGT_BANK\core-bank-service\src\main\java\com\wggt\core_bank_service\model\entity\UserEntity.java
- * @Description: 
+ * @Description: 用户实体类
  * 
  * Copyright (c) 2024 by wggt, All Rights Reserved. 
  */

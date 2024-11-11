@@ -2,9 +2,9 @@
  * @Author: princewang666 1213246620@qq.com
  * @Date: 2024-11-06 17:24:24
  * @LastEditors: princewang666 1213246620@qq.com
- * @LastEditTime: 2024-11-06 17:27:40
+ * @LastEditTime: 2024-11-11 16:23:04
  * @FilePath: \WGGT_BANK\core-bank-service\src\main\java\com\wggt\core_bank_service\model\entity\UtilityAccountEntity.java
- * @Description: 对公账户实体类
+ * @Description: 公共账户实体类
  * 
  * Copyright (c) 2024 by wggt, All Rights Reserved. 
  */
@@ -14,13 +14,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(title = "对公账户实体类")
+@Schema(title = "公共账户实体类")
 public class UtilityAccountEntity {
-    @Schema(name = "对公账户ID", format = "int64", example = "1")
+    @Schema(name = "公共账户ID", format = "int64", example = "1")
     private Long id;
-    @Schema(name = "个人账户号", example = "6000100080007000300")
+    @Schema(name = "账户号", description = "暂时没用到好像")
     private String number;
-    @Schema(name = "提供者姓名", example = "中国银行")
+    @Schema(name = "公共账户名", example = "淘宝网")
     private String providerName;
 
 }

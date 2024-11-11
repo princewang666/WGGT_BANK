@@ -9,4 +9,6 @@ import com.wggt.core_bank_service.model.entity.BankAccountEntity;
 @Mapper
 public interface BankAccountMapper {
     Optional<BankAccountEntity> findByNumber(String accountNumber);
+
+    boolean save(BankAccountEntity bankAccountEntity);
 }
