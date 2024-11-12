@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wggt.core_bank_service.mapper.UtilityAccountMapper">
+    <select id="findByProviderName" resultType="com.wggt.core_bank_service.model.entity.UtilityAccountEntity">
+        select * from core_bank_utility_account where provider_name = #{providerName}
+    </select>
+    <select id="findById" resultType="com.wggt.core_bank_service.model.entity.UtilityAccountEntity">
+        select * from core_bank_utility_account where id = #{id}
+    </select>
+</mapper>

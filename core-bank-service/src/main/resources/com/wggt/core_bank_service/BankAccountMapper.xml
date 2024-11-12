@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wggt.core_bank_service.mapper.BankAccountMapper">
+    <select id="findByNumber" resultType="com.wggt.core_bank_service.model.entity.BankAccountEntity">
+        select * from core_bank_account where number = #{accountNumber}
+    </select>
+    <select id="findByUserId" resultType="com.wggt.core_bank_service.model.entity.BankAccountEntity">
+        select * from core_bank_account where user_id = #{userId}
+    </select>
+    <update id="save" parameterType="com.wggt.core_bank_service.model.entity.BankAccountEntity">
+        update core_bank_account 
+        set id = #{id}, actual_balance = #{actualBalance}, available_balance = #{availableBalance}, number = #{number}, status = #{status}, type = #{type}, user_id = #{userId}
+        where id = #{id}
+    </update>
+</mapper>

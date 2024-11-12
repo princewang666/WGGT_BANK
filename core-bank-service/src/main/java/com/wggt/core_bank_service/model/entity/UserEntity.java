@@ -28,6 +28,8 @@ public class UserEntity {
     private String email;
     @Schema(name = "识别号", description = "用于识别用户(暂时不知)")
     private String identificationNumber;
+
+    
     @Schema(name = "用户账户", description = "用户名下的所有账户(List类型)", type = "array", example = "[BankAccountEntity1, BankAccountEntity2]", implementation = BankAccountEntity.class)
     private List<BankAccountEntity> accounts;
 }

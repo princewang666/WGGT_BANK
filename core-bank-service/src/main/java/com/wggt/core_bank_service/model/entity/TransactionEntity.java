@@ -2,7 +2,7 @@
  * @Author: princewang666 1213246620@qq.com
  * @Date: 2024-11-06 17:27:56
  * @LastEditors: princewang666 1213246620@qq.com
- * @LastEditTime: 2024-11-11 16:25:17
+ * @LastEditTime: 2024-11-12 11:17:51
  * @FilePath: \WGGT_BANK\core-bank-service\src\main\java\com\wggt\core_bank_service\model\entity\TransactionEntity.java
  * @Description: 交易记录实体
  * 
@@ -32,6 +32,10 @@ public class TransactionEntity {
     private String referenceNumber;
     @Schema(name = "交易ID", description = "每笔交易对应的UUID")
     private String transactionId;
+    @Schema(name = "用户账户id", description = "支出/接收用户", format = "int64", example = "1")
+    private Long accountId;
+
+    
     @Schema(name = "用户账户", description = "支出/接收用户", implementation = BankAccountEntity.class)
     private BankAccountEntity account;
 }

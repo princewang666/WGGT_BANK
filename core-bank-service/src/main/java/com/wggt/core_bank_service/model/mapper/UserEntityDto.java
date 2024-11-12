@@ -8,7 +8,6 @@ import com.wggt.core_bank_service.model.entity.UserEntity;
 public class UserEntityDto extends BaseMapper<UserEntity, User>{
     private BankAccountEntityDto bankAccountEntityDto = new BankAccountEntityDto();
 
-
     @Override
     public UserEntity convertToEntity(User dto) {
         UserEntity entity = new UserEntity();

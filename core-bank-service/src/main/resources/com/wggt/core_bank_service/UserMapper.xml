@@ -6,6 +6,9 @@
     <select id="findByIdentificationNumber" resultType="com.wggt.core_bank_service.model.entity.UserEntity">
         select * from core_bank_user where identification_number = #{identificationNumber}
     </select>
+    <select id="findById" resultType="com.wggt.core_bank_service.model.entity.UserEntity">
+        select * from core_bank_user where id = #{id}
+    </select>
     <select id="findAll" resultType="com.wggt.core_bank_service.model.entity.UserEntity">
         select * from core_bank_user
     </select>

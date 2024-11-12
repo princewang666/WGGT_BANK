@@ -8,12 +8,12 @@ import lombok.Data;
 @Data
 @Schema(title = "支付请求体")
 public class UtilityPaymentRequest {
-    @Schema(name = "对公账户ID", format = "int64", example = "1")
+    @Schema(name = "公共账户ID", format = "int64", example = "1")
     private Long providerId;
     @Schema(name = "支付金额", implementation = BigDecimal.class)
     private BigDecimal amount;
-    @Schema(name = "参考号", description = "参考号(暂时不知)")
+    @Schema(name = "公共账户卡号", example = "6000100080007000308")
     private String referenceNumber;
-    @Schema(name = "收款账户", example = "6000100080007000301")
+    @Schema(name = "支付账户", example = "6000100080007000301")
     private String account;
 }

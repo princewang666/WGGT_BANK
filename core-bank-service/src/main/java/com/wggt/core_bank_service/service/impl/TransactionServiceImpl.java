@@ -33,8 +33,8 @@ public class TransactionServiceImpl implements TransactionService{
     @Autowired
     private BankAccountMapper bankAccountMapper;
     @Autowired
-    
     private TransactionMapper transactionMapper;
+
     @Override
     public FundTransferResponse fundTransfer(FundTransferRequest fundTransferRequest) {
         BankAccount fromBankAccount = accountService.readBankAccount(fundTransferRequest.getFromAccount());
@@ -65,12 +65,14 @@ public class TransactionServiceImpl implements TransactionService{
 
         fromAccount.setActualBalance(fromAccount.getActualBalance().subtract(utilityPaymentRequest.getAmount()));
         fromAccount.setAvailableBalance(fromAccount.getActualBalance().subtract(utilityPaymentRequest.getAmount()));
+        bankAccountMapper.save(fromAccount);
 
         transactionMapper.save(TransactionEntity.builder().transactionType(TransactionType.UTILITY_PAYMENT)
-            .account(fromAccount)
+            .accountId(fromAccount.getId())
             .transactionId(transactionId)
             .referenceNumber(utilityPaymentRequest.getReferenceNumber())
-            .amount(utilityPaymentRequest.getAmount().negate()).build());
+            .amount(utilityPaymentRequest.getAmount().negate())
+            .account(fromAccount).build());
 
         return UtilityPaymentResponse.builder().message("Utility payment successfully completed")
             .transactionId(transactionId).build();
@@ -97,7 +99,9 @@ public class TransactionServiceImpl implements TransactionService{
         transactionMapper.save(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
             .referenceNumber(toBankAccountEntity.getNumber())
             .transactionId(transactionId)
-            .account(fromBankAccountEntity).amount(amount.negate()).build());
+            .accountId(fromBankAccountEntity.getId())
+            .amount(amount.negate())
+            .account(fromBankAccountEntity).build());
 
         toBankAccountEntity.setActualBalance(toBankAccountEntity.getActualBalance().add(amount));
         toBankAccountEntity.setAvailableBalance(toBankAccountEntity.getActualBalance().add(amount));
@@ -106,7 +110,9 @@ public class TransactionServiceImpl implements TransactionService{
         transactionMapper.save(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
             .referenceNumber(toBankAccountEntity.getNumber())
             .transactionId(transactionId)
-            .account(toBankAccountEntity).amount(amount).build());
+            .accountId(toBankAccountEntity.getId())
+            .amount(amount)
+            .account(toBankAccountEntity).build());
 
         return transactionId;
     }

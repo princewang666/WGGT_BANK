@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wggt.core_bank_service.mapper.TransactionMapper">
+    <update id="save" parameterType="com.wggt.core_bank_service.model.entity.TransactionEntity">
+        update core_bank_transaction 
+        set id = #{id}, amount = #{amount}, transaction_type = #{transactionType}, reference_number = #{referenceNumber}, transaction_id = #{transactionId}, account_id = #{accountId}
+        where id = #{id}
+    </update>
+</mapper>

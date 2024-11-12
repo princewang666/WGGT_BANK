@@ -2,7 +2,7 @@
  * @Author: princewang666 1213246620@qq.com
  * @Date: 2024-11-06 16:40:07
  * @LastEditors: princewang666 1213246620@qq.com
- * @LastEditTime: 2024-11-08 16:18:25
+ * @LastEditTime: 2024-11-12 11:05:50
  * @FilePath: \WGGT_BANK\core-bank-service\src\main\java\com\wggt\core_bank_service\model\entity\BankAccountEntity.java
  * @Description: 银行账户实体类
  * 
@@ -33,7 +33,10 @@ public class BankAccountEntity {
     private BigDecimal availableBalance;
     @Schema(name = "实际余额", implementation = BigDecimal.class)
     private BigDecimal actualBalance;
-
+    @Schema(name = "所属用户id", format = "int64", example = "1")
+    private Long userId;
+    
+    
     @Schema(name = "所属用户", implementation = UserEntity.class)
     private UserEntity user;
 }
