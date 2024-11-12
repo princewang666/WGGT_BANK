@@ -26,6 +26,13 @@ spring:
               - Path=/fund-transfer/**
             filters:
               - StripPrefix=1
+          # 银行核心服务
+          - id: core-bank-service
+            uri: lb://core-bank-service
+            predicates:
+              - Path=/core-bank/**
+            filters:
+              - StripPrefix=1
   # 安全认证配置
   security:
     # 使用OIDC协议，认证服务器会暴露网址用于认证授权用户

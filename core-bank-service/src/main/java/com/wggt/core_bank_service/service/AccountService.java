@@ -15,7 +15,7 @@ public interface AccountService {
      * @param provider 公司名
      * @return UtilityAccount DTO形式
      */
-    UtilityAccount readUtilityAccount(String provider);
+    UtilityAccount readUtilityAccount(String providerName);
     /**
      * 根据id读取对公账户
      * @param id id
