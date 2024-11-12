@@ -31,6 +31,7 @@
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
+
 		<!-- guava默认导入bundle，需要使用插件使用，删除bundle即可 -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -68,7 +69,7 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			
+			<version>3.0.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -96,15 +97,11 @@
 		<dependencies>
 			<!-- 处理依赖冲突包含的前版本，将原版本回退 -->
 			<!-- spring-cloud-starter-netflix-eureka-client 的 guava 冲突不处理，不然没需要的类 -->
+			<!-- pagehelper-spring-boot-starter 和 mybatis-spring-boot-starter3.0.3 冲突不处理，低版本mybatis没法在大于3.2springboot启动 -->
 			<dependency>
 				<groupId>org.checkerframework</groupId>
 				<artifactId>checker-qual</artifactId>
 				<version>3.41.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mybatis.spring.boot</groupId>
-				<artifactId>mybatis-spring-boot-starter</artifactId>
-				<version>2.3.2</version>
 			</dependency>
 
 			<dependency>
