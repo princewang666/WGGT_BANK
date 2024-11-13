@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wggt.bank_user_service.mapper.UserMapper">
+    <insert id="insert" parameterType="com.wggt.bank_user_service.model.entity.UserEntity">
+        insert into bank_user_table (id, auth_id, identification, status) 
+        values (#{id}, #{authId}, #{identification}, #{status})
+    </insert>
+</mapper>

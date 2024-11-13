@@ -6,6 +6,16 @@ spring:
 server:
   port: 8091
 
+# Keycloak 配置
+keycloak:
+  config:
+    serverUrl: http://192.168.114.129:8080/realms/wggt_bank_keycloak/protocol/openid-connect/auth
+    realm: wggt_bank_keycloak
+    username: testuser
+    password: 1234
+    clientId: wggt_bank_apigateway
+    clientSecret: bil2JCN1sPyOcL1S6LIIKheJ3HlFA56Y
+
 eureka:
   client:
     serviceUrl:
