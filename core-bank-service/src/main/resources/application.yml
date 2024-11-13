@@ -7,6 +7,11 @@ spring:
     username: wggt
     driver-class-name: org.postgresql.Driver
 
+# mybatis自动驼峰映射
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
 # 端口号
 server:
   port: 8095

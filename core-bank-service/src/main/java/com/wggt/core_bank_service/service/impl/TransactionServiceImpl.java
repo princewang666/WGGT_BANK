@@ -64,10 +64,10 @@ public class TransactionServiceImpl implements TransactionService{
         utilityAccount.getNumber();  // 第三方账户金额增加，在这里没有编写
 
         fromAccount.setActualBalance(fromAccount.getActualBalance().subtract(utilityPaymentRequest.getAmount()));
-        fromAccount.setAvailableBalance(fromAccount.getActualBalance().subtract(utilityPaymentRequest.getAmount()));
+        fromAccount.setAvailableBalance(fromAccount.getAvailableBalance().subtract(utilityPaymentRequest.getAmount()));
         bankAccountMapper.save(fromAccount);
 
-        transactionMapper.save(TransactionEntity.builder().transactionType(TransactionType.UTILITY_PAYMENT)
+        transactionMapper.insert(TransactionEntity.builder().transactionType(TransactionType.UTILITY_PAYMENT)
             .accountId(fromAccount.getId())
             .transactionId(transactionId)
             .referenceNumber(utilityPaymentRequest.getReferenceNumber())
@@ -93,10 +93,10 @@ public class TransactionServiceImpl implements TransactionService{
         BankAccountEntity toBankAccountEntity = bankAccountMapper.findByNumber(toBankAccount.getNumber()).orElseThrow(EntityNotFoundException::new);
 
         fromBankAccountEntity.setActualBalance(fromBankAccountEntity.getActualBalance().subtract(amount));
-        fromBankAccountEntity.setAvailableBalance(fromBankAccountEntity.getActualBalance().subtract(amount));
+        fromBankAccountEntity.setAvailableBalance(fromBankAccountEntity.getAvailableBalance().subtract(amount));
         bankAccountMapper.save(fromBankAccountEntity);
 
-        transactionMapper.save(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
+        transactionMapper.insert(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
             .referenceNumber(toBankAccountEntity.getNumber())
             .transactionId(transactionId)
             .accountId(fromBankAccountEntity.getId())
@@ -104,10 +104,10 @@ public class TransactionServiceImpl implements TransactionService{
             .account(fromBankAccountEntity).build());
 
         toBankAccountEntity.setActualBalance(toBankAccountEntity.getActualBalance().add(amount));
-        toBankAccountEntity.setAvailableBalance(toBankAccountEntity.getActualBalance().add(amount));
+        toBankAccountEntity.setAvailableBalance(toBankAccountEntity.getAvailableBalance().add(amount));
         bankAccountMapper.save(toBankAccountEntity);
 
-        transactionMapper.save(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
+        transactionMapper.insert(TransactionEntity.builder().transactionType(TransactionType.FUND_TRANSFER)
             .referenceNumber(toBankAccountEntity.getNumber())
             .transactionId(transactionId)
             .accountId(toBankAccountEntity.getId())
