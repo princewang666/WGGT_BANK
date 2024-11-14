@@ -7,3 +7,5 @@ CREATE TABLE bank_user_table (
     status                  varchar(255) DEFAULT NULL,
     PRIMARY KEY (id)
 );
+
+DROP TABLE bank_user_table

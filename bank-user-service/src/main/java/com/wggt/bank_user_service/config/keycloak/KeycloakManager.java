@@ -11,17 +11,11 @@ public class KeycloakManager {
     private String serverUrl;
     @Value("${keycloak.config.realm}")
     private String realm;
-    @Value("${keycloak.config.username}")
-    private String username;
-    @Value("${keycloak.config.password}")
-    private String password;
-    @Value("${keycloak.config.clientId}")
-    private String clientId;
-    @Value("${keycloak.config.clientSecret}")
-    private String clientSecret;
+
 
     public RealmResource getRealmResource() {
-        Keycloak keycloak = Keycloak.getInstance(serverUrl, realm, username, password, clientId, clientSecret);
+        // 目前创建用户只会用admin，user 和 clients 都不太会
+        Keycloak keycloak = Keycloak.getInstance(serverUrl, "master", "admin", "admin", "admin-cli");
         return keycloak.realm(realm);
     }
 }

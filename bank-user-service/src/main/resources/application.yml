@@ -1,6 +1,16 @@
 spring:
   application:
     name: bank-user-service
+  # 数据库连接信息配置
+  datasource:
+    url: jdbc:postgresql://192.168.114.129:5432/mybank
+    username: wggt
+    driver-class-name: org.postgresql.Driver
+
+# mybatis自动驼峰映射
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
 
 # 端口号
 server:
@@ -9,12 +19,8 @@ server:
 # Keycloak 配置
 keycloak:
   config:
-    serverUrl: http://192.168.114.129:8080/realms/wggt_bank_keycloak/protocol/openid-connect/auth
+    serverUrl: http://192.168.114.129:8080
     realm: wggt_bank_keycloak
-    username: testuser
-    password: 1234
-    clientId: wggt_bank_apigateway
-    clientSecret: bil2JCN1sPyOcL1S6LIIKheJ3HlFA56Y
 
 eureka:
   client:

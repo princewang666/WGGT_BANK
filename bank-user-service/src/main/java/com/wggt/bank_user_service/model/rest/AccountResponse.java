@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(title = "账户响应类")
+@Schema(title = "账户响应类", description = "对应core-bank-service的BankAccount DTO")
 public class AccountResponse {
     @Schema(name = "账户号", example = "6000100080007000300")
     private String number;

@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(title = "用户传输 DTO 类")
+@Schema(title = "用户传输 DTO 类", description = "前端传入用于创建用户")
 public class User {
     @Schema(name = "用户ID", format = "int64", example = "1")
     private Long id;

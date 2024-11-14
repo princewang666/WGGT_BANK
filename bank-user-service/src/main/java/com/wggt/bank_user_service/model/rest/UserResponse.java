@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(title = "用户响应类")
+@Schema(title = "用户响应类", description = "对应core-bank-service的User DTO")
 public class UserResponse {
     @Schema(name = "用户名", example = "Donald")
     private String firstName;
